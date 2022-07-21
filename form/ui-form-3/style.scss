@@ -1,0 +1,125 @@
+html {
+  font-size: 62.5%;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.form {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  //   height: 100vh;
+  bottom: 0;
+  background-color: #2c3338;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 100px;
+  // background-color: aliceblue;
+  position: relative;
+  &__title {
+    margin-bottom: 60px;
+    font-size: 5rem;
+    font-weight: bold;
+    color: transparent;
+    background-image: linear-gradient(
+      to right bottom,
+      gray,
+      pink,
+      violet,
+      blue
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__input {
+    width: 350px;
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    & input {
+      display: flex;
+      padding: 15px 20px 15px 50px;
+      flex: 1;
+      outline: none;
+      border: none;
+      background-color: rgba(#4f5357, 0.4);
+      border-radius: 5px;
+      transition: all 0.3s linear;
+      color: white;
+
+      &:hover {
+        background-color: rgba(#4f5357, 0.8);
+      }
+      &:focus {
+        background-color: rgba(#4f5357, 0.8);
+      }
+    }
+  }
+  &__icon {
+    position: absolute;
+    font-size: 1.6rem;
+    width: 40px;
+    height: 100%;
+    background-color: #363b41;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+    color: #606468;
+  }
+  &__submit {
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: #ea4c88;
+    text-transform: uppercase;
+  }
+  &__text {
+    color: #606468;
+    font-size: 1.4rem;
+
+    & a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and(max-width:767px) {
+  .form {
+    align-items: unset;
+  }
+  .login {
+    &__input {
+      width: 330px;
+    }
+    &__submit {
+      width: 330px;
+    }
+  }
+}
+@media screen and(max-width:320px) {
+  .form {
+    align-items: center;
+  }
+}

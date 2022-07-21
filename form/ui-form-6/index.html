@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI-FORM-6</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="overlay">
+      <form action="" class="form">
+        <h2 class="form__title">Log In</h2>
+        <span class="form__text"
+          >login here using your username and password</span
+        >
+        <div class="form__group form__group--user">
+          <i class="fa-solid fa-user form__icon"></i>
+          <input type="text" placeholder="@Username" />
+        </div>
+        <div class="form__group form__group--password">
+          <i class="fa-solid fa-key form__icon"></i>
+          <input type="text" placeholder="Password" />
+          <i class="fa-solid fa-eye form__eye"></i>
+        </div>
+
+        <button class="form__submit">Log In</button>
+
+        <div class="form__option">
+          <a href="#" class="form__forgot">Forgot Password</a>
+          <a href="#" class="form__signup">
+            Sign up
+            <i class="fa-solid fa-user-plus"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

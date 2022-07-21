@@ -1,0 +1,154 @@
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+button {
+  border: none;
+}
+$primary-color: #1877f2;
+$text-color: #9999;
+$border-color: #e7e8e7;
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(95, 80, 80, 0.2),
+      rgba(95, 80, 80, 0.4)
+    ),
+    url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
+  background-size: cover;
+
+  &__form {
+    position: absolute;
+    width: 340px;
+    min-height: 375px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 6px 5px 10px 2px rgb(255 255 255 / 30%);
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 6px;
+      height: 50px;
+      background-color: $primary-color;
+      left: 0;
+      top: 52px;
+    }
+  }
+  &__option {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: blue;
+    right: -40px;
+    top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+  }
+  &__content {
+    padding: 55px 35px 35px 35px;
+  }
+  &__input {
+    margin-bottom: 20px;
+  }
+  &__user,
+  &__password {
+    padding: 12px 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #e7e8e7;
+
+    &:not(:placeholder-shown) + .login__label,
+    &:focus + .login__label {
+      top: 0;
+      color: $primary-color;
+    }
+  }
+  &__label {
+    position: absolute;
+    color: $text-color;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    font-size: 1.2rem;
+    pointer-events: none;
+    transition: all 0.2s linear;
+  }
+  &__effect {
+    position: relative;
+
+    &:first-child {
+      transform: translateY(-30px);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      background-color: $primary-color;
+      transition: all 0.2s linear;
+    }
+
+    &:focus-within:before {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    color: $primary-color;
+    margin-bottom: 55px;
+  }
+
+  &__submit {
+    display: block;
+    color: $text-color;
+    font-size: 1.2rem;
+    padding: 20px 70px;
+    margin: 0 auto 35px auto;
+    border: 3px solid $border-color;
+    background-color: #ffffff;
+  }
+  &__forgot {
+    display: block;
+    font-size: 1.2rem;
+    color: $text-color;
+    text-align: center;
+  }
+}
+
+@media screen and(max-width:767px) {
+  .login {
+    &__form {
+      width: 100%;
+      height: 100%;
+      margin: unset;
+      border-radius: unset;
+    }
+    &__option {
+      width: 60px;
+      height: 60px;
+      margin-right: 50px;
+    }
+  }
+}

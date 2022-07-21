@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+html {
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary: #b98589;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfc9ca;
+}
+.card {
+  // sử dụng position: relative  => dùng scale bị lỗi vỡ giao diện
+  //   position: relative;
+
+  width: 550px;
+  height: 320px;
+  display: flex;
+}
+.left {
+  width: 60%;
+  background-color: #eee;
+  padding: 0 20px;
+  border-radius: 10px 0 0 10px;
+  &__img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 290px;
+    margin-left: -10px;
+    & img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      image-rendering: pixelated;
+    }
+  }
+  &__choose {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: $primary;
+  }
+  &__size {
+    list-style: none;
+    display: flex;
+    margin-left: -4px;
+    & li {
+      width: 40px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary;
+      margin-left: 4px;
+      border: 1px solid $primary;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background-color: #ac686d;
+        color: white;
+      }
+    }
+  }
+}
+.right {
+  width: 40%;
+  background-color: #eee;
+  padding: 0 20px 0 0;
+  box-shadow: -1px 0 0 0 #eee;
+  border-radius: 0 10px 10px 0;
+  &__title {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 5px;
+  }
+  &__name {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #8a8989;
+    margin-bottom: 10px;
+  }
+  &__price {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $primary;
+    margin-bottom: 20px;
+  }
+  &__desc {
+    font-size: 1.1rem;
+    color: #8a8989;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  &__buy {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    & button {
+      width: 80%;
+      height: 32px;
+      border: none;
+      background-color: $primary;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background-color: #ac686d;
+      }
+    }
+
+    & i {
+      text-align: center;
+      width: calc(20% - 7px);
+      height: 32px;
+      font-size: 2rem;
+      background-color: red;
+      margin-left: 2px;
+      background-color: $primary;
+      color: white;
+      border-radius: 2px;
+      transition: all 0.2s linear;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ac686d;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:767px) {
+  .card {
+    transform: scale(0.6);
+  }
+
+  .right {
+    padding: 0 20px;
+
+    &__desc {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      overflow: hidden;
+    }
+  }
+}

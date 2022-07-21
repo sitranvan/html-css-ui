@@ -1,0 +1,215 @@
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  background-image: url("https://1.bp.blogspot.com/-fd1WXKk-TAc/XyqfngP4PiI/AAAAAAAAVMw/umQz3tkxtg43uPIy8W5og6gAkpCfjaTvACLcBGAsYHQ/w1563-h1563/bg-snell.png");
+  background-image: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  width: 60%;
+  min-height: 350px;
+  display: flex;
+}
+.form__left {
+  padding: 0 50px;
+  width: calc(35% - 50px);
+  background-color: #12112c;
+  border-radius: 5px 0 0 5px;
+}
+.form-title {
+  display: flex;
+  align-items: center;
+  margin-top: 55px;
+  margin-bottom: 25px;
+}
+.form-title__logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+.form-title__text {
+  font-weight: 600;
+  margin-left: 10px;
+  text-transform: uppercase;
+  color: #dad8d8;
+}
+.form-title__desc {
+  color: white;
+}
+.form-social {
+  margin-top: 20px;
+}
+.form-social__connect, .form-mobile__connect {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 3px;
+  color: white;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  transition: all 0.2s linear;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.form-social__connect:not(:last-child), .form-mobile__connect:not(:last-child) {
+  margin-bottom: 10px;
+}
+.form-social__connect:nth-child(1), .form-mobile__connect:nth-child(1) {
+  background-color: #1877f2;
+}
+.form-social__connect:nth-child(2), .form-mobile__connect:nth-child(2) {
+  background-color: #1da1f2;
+}
+.form-social__connect:nth-child(3), .form-mobile__connect:nth-child(3) {
+  background-color: #db4437;
+}
+.form__right {
+  width: calc(65% - 55px);
+  padding: 0 55px;
+  background-color: white;
+}
+.form-email {
+  text-align: center;
+  margin-top: 42px;
+  margin-bottom: 25px;
+}
+.form-email__account {
+  color: #2d385e;
+  font-size: 2rem;
+}
+.form-email__text {
+  font-size: 1rem;
+  color: #333;
+}
+.form-email__text a {
+  text-decoration: none;
+  color: #4f77ff;
+}
+.form-input {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+.form-input input {
+  flex: 1;
+  padding: 10px;
+  border: 0.5px solid #bbb3b3;
+  box-shadow: 1px 1px 4px 0px #d3cece;
+  border-radius: 2px;
+  outline: none;
+}
+.form-input input:not(:last-child) {
+  margin-bottom: 10px;
+}
+.form-rules {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.form-rules__check {
+  display: flex;
+  align-items: center;
+}
+.form-rules__check label {
+  color: #646363;
+  margin-left: 5px;
+}
+.form-rules__forgot {
+  text-decoration: none;
+  color: #4f77ff;
+}
+.form-submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #4f77ff;
+  color: white;
+  font-weight: 500;
+  border-radius: 3px;
+  transition: all 0.2s linear;
+}
+.form-submit:hover {
+  opacity: 0.8;
+}
+.form-submit:active {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.form-mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  margin-top: 20px;
+}
+.form-mobile__connect:hover {
+  opacity: 0.8;
+}
+.form-mobile__connect:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.form-mobile__connect:nth-child(1) {
+  background-color: #1877f2;
+}
+.form-mobile__connect:nth-child(2) {
+  background-color: #1da1f2;
+}
+.form-mobile__connect:nth-child(3) {
+  background-color: #db4437;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .form-social__connect, .form-mobile__connect {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .overlay {
+    align-items: unset;
+    justify-content: unset;
+  }
+
+  .form {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+  }
+  .form__left, .form__right {
+    width: unset;
+  }
+  .form__right {
+    height: 100%;
+    overflow-y: auto;
+  }
+  .form__left {
+    display: none;
+  }
+  .form-mobile {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

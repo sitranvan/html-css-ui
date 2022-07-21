@@ -1,0 +1,221 @@
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin mobile-device {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+$background-color: #181828;
+$form-color: #141321;
+$primary-color: #2de4a6;
+$input-color: #161623;
+$forgot-color: #31423a;
+$button-color: #1c1f2f;
+$text-color: #4c525c;
+$facebook-color: #1877f2;
+$linkedin-color: #0a66c2;
+$tiktok-color: #ee1d51;
+$twitter-color: #1da1f2;
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background-color;
+}
+
+.form {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 550px;
+  background-color: $form-color;
+  box-shadow: 10px 10px 36px rgb(0, 0, 0, 0.5),
+    -13px -13px 23px rgba(255, 255, 255, 0.03);
+  padding: 0 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    font-size: 3rem;
+    color: $primary-color;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  &__desc {
+    color: $text-color;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 60px;
+    & input {
+      flex: 1;
+      padding: 10px 20px;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      background-color: $input-color;
+
+      color: #ffff;
+      box-shadow: 3px 9px 16px rgb(0, 0, 0, 0.4),
+        -3px -3px 10px rgba(255, 255, 255, 0.06),
+        inset 14px 14px 26px rgb(0, 0, 0, 0.3),
+        inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+      &::-webkit-input-placeholder {
+        color: $text-color;
+      }
+
+      &:first-child {
+        margin-bottom: 30px;
+      }
+      &:focus {
+        border: 0.5px solid $forgot-color;
+      }
+    }
+  }
+  &__button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: $background-color;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: inset 0px 0px 1px 0px #9999, 0px 0px 18px 3px rgba(#010102, 0.2);
+
+    &:hover {
+      background-color: #24243b;
+    }
+    &:active {
+      box-shadow: inset 2px -4px 16px 0px #1e1e2e;
+    }
+  }
+  &__forgot {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $forgot-color;
+    margin-bottom: 50px;
+    text-decoration: none;
+  }
+
+  &__social {
+    display: flex;
+    margin-left: -20px;
+  }
+  &__link {
+    width: 35px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    background-color: $form-color;
+    margin-left: 20px;
+    border-radius: 3px;
+    box-shadow: -2px -2px 16px 0 rgb(255 255 255 / 10%),
+      inset 0.5px 0.5px 0px 0 rgb(255 255 255 / 40%),
+      inset -1px -1px 5px 0 rgb(153 153 153 / 15%), rgb(0 0 0 / 70%) 3px 4px 5px;
+
+    &:nth-child(1) {
+      color: $facebook-color;
+    }
+    &:nth-child(2) {
+      color: $linkedin-color;
+    }
+    &:nth-child(3) {
+      color: $twitter-color;
+    }
+    &:nth-child(4) {
+      color: $tiktok-color;
+    }
+
+    &--facebook {
+      animation: facebook 400ms ease-in infinite;
+    }
+    &--linkedin {
+      animation: inkedin 0.6s linear infinite alternate;
+    }
+    &--twitter {
+      animation: twitter 300ms linear infinite alternate;
+    }
+    &--tiktok {
+      animation: tiktok 1s linear infinite alternate;
+    }
+    & i {
+      font-size: 1.8rem;
+      display: block;
+      padding: 10px;
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+@keyframes facebook {
+  0% {
+    transform: rotate(12deg);
+  }
+  50% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes inkedin {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes twitter {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes tiktok {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@include mobile-device() {
+  .form {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  }
+}

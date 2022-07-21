@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Muli");
+
+html {
+  font-size: 62.5%;
+  font-family: "muli";
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 450px;
+  height: 300px;
+
+  display: flex;
+}
+.left {
+  width: 50%;
+  height: 100%;
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 0 0 6px;
+    overflow: hidden;
+  }
+}
+.right {
+  width: 50%;
+  background-color: white;
+  padding: 0 20px;
+  border-radius: 0 6px 6px 0;
+  &__title {
+    margin-top: 35px;
+    margin-bottom: 3px;
+    font-size: 2.3rem;
+    color: #333;
+  }
+  &__performer {
+    display: inline-block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #d8d6d6;
+  }
+
+  &__desc {
+    font-size: 1.1rem;
+    color: #999;
+    margin-bottom: 35px;
+  }
+  &-pay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__buy {
+      width: 60%;
+      padding: 8px;
+      border: none;
+      border-radius: 20px;
+      background-color: #9cebd5;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #eee;
+    }
+
+    &__price {
+      font-size: 2.5rem;
+      color: #333;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and(max-width:767px) {
+  .card {
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .left,
+  .right {
+    width: 100%;
+    height: 100%;
+  }
+}
